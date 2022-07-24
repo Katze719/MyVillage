@@ -2,9 +2,9 @@
 
 void UpdatePlayer(Player* player, EnvItem* envItems, int envItemsLength, float delta)
 {
-	if (IsKeyDown(KEY_LEFT)) player->position.x -= PLAYER_HOR_SPD * delta;
-	if (IsKeyDown(KEY_RIGHT)) player->position.x += PLAYER_HOR_SPD * delta;
-	if (IsKeyDown(KEY_SPACE) && player->canJump)
+	if (IsKeyDown(KEY_A) || IsKeyDown(KEY_LEFT)) player->position.x -= PLAYER_HOR_SPD * delta;
+	if (IsKeyDown(KEY_D) || IsKeyDown(KEY_RIGHT)) player->position.x += PLAYER_HOR_SPD * delta;
+	if ((IsKeyDown(KEY_SPACE) || IsKeyDown(KEY_W) || IsKeyDown(KEY_UP)) && player->canJump)
 	{
 		player->speed = -PLAYER_JUMP_SPD;
 		player->canJump = false;
